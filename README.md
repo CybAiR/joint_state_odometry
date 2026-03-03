@@ -1,2 +1,3 @@
 The purpose of this repository is determining odometry of the lunar rover. It works with AK80-9 motors produced by MAB Robotics. The codes read actual measurements from the motors and convert it directly to actual rover position and orientation. We have to notice that it doesn't include some additional constructions like e.g. Kalman filter so in case of the wheel slip the result will not be accurate.
+\\
 In the first step, it is obligatory to install repository from MAB Robotics.
