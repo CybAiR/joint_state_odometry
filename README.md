@@ -11,5 +11,10 @@ If you want to control your robot from the computer level, you have to install "
 \
 Next, we can go to loading this repo to workspace. If you are in the "src" folder, type this command: "git clone https://github.com/LukaszMajchrzak3/joint_state_odometry.git".
 \
-After sourcing and building the all workspace, it is recommended to try if informations from motors are transmitted. They are in "md80/joint_states" topic so you should type "ros2 topic echo /md80/joint_states". If informations are present, reading is realised properly.
-\
+After "building" and "sourcing" all the workspace, it's time to run the odometry calculations.
+1. Use command "ros2 run candle_ros2 candle_ros2_node USB 1M" to initialize communication with motors via USB.
+2. It is recommended to try if informations from motors are transmitted. They are in "md80/joint_states" topic so you should type "ros2 topic echo /md80/joint_states". If informations are present, reading is realised properly.
+3. In another terminal type "ros2 run teleop_twist_keyboard teleop_twist_keyboard" to run control of the motors.
+4. In other terminal type "ros2 launch joint_state_odometry odometry.launch.py".
+
+Now, if everything was done correctly, you should see actual position and orientation of the rover.
