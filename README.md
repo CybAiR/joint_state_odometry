@@ -15,7 +15,7 @@ After "building" and "sourcing" all the workspace, it's time to run the odometry
 1. Use command "ros2 run candle_ros2 candle_ros2_node USB 1M" to initialize communication with motors via USB.
 2. It is recommended to try if informations from motors are transmitted. They are in "md80/joint_states" topic so you should type "ros2 topic echo /md80/joint_states". If informations are present, reading is realised properly.
 3. In another terminal type "ros2 run teleop_twist_keyboard teleop_twist_keyboard" to run control of the motors.
-4. In other terminal type "ros2 launch joint_state_odometry odometry.launch.py".
+4. In other terminal type "ros2 launch joint_state_odometry odometry.launch.py". You can also use "ros2 run joint_state_odometry joint_state_odometry_node".
 5. The results are published in "odom" topic. If you want to see them, you can use the code which is the part of this repository by typing "ros2 run joint_state_odometry print_odom_pose" in console.
 
 Now, if everything was done correctly, you should see actual position and orientation of the rover.
