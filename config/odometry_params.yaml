@@ -5,7 +5,7 @@ joint_state_odometry_node:
     right_wheel_joints: ["Joint 511", "Joint 512"]
 
     wheel_radius: 0.105          # m
-    wheel_separation: 2.0      # m
+    wheel_separation: 2.0        # m
 
     odom_frame_id: "odom"
     base_frame_id: "base_link"
