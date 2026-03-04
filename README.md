@@ -1,4 +1,4 @@
-The purpose of this repository is determining odometry of the lunar rover. It works with AK80-9 motors produced by MAB Robotics. The codes read actual measurements from the motors and convert it directly to actual rover position and orientation. We have to notice that it doesn't include some additional constructions like e.g. Kalman filter so in case of the wheel slip the result will not be accurate.
+The purpose of this repository is determining odometry of the lunar rover. Its implementation is based on ROS2 Humble. It works with AK80-9 motors produced by MAB Robotics. The codes read actual measurements from the motors and convert it directly to actual rover position and orientation. We have to notice that it doesn't include some additional constructions like e.g. Kalman filter so in case of the wheel slip the result will not be accurate.
 \
 In the first step, it is obligatory to install repository from MAB Robotics which in neccessary to communicate with motors. Even if you've done it already, please, read this section.
 1. Create workspace folder.
@@ -7,7 +7,7 @@ In the first step, it is obligatory to install repository from MAB Robotics whic
 4. Go to "candle_ros2" folder and use command "git checkout 957fb87663ba940043fe939d8c2fab79d09c000f" - this repo only works with older version.
 
 
-If you want to control your robot from the computer level, you have to install "teleop_twist_keyboard" package by using "sudo apt-get install ros-noetic-teleop-twist-keyboard" command.
+If you want to control your robot from the computer level, you have to install "teleop_twist_keyboard" package by using "sudo apt install ros-humble-teleop-twist-keyboard" command.
 \
 Next, we can go to loading this repo to workspace. If you are in the "src" folder, type this command: "git clone https://github.com/LukaszMajchrzak3/joint_state_odometry.git".
 \
