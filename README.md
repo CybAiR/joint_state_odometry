@@ -1,4 +1,4 @@
-The purpose of this repository is determining odometry of the lunar rover. Its implementation is based on ROS2 Humble. It works with AK80-9 motors produced by MAB Robotics. The codes read actual measurements from the motors and convert it directly to actual rover position and orientation. We have to notice that it doesn't include some additional constructions like e.g. Kalman filter so in case of the wheel slip the result will not be accurate.
+The purpose of this repository is determining odometry of the lunar rover. Its implementation is based on ROS2 Humble. It works with AK80-9 motors produced by MAB Robotics. The codes read actual measurements from the motors and convert it directly to actual rover position and orientation. We have to notice that it doesn't include some additional constructions like e.g. Kalman filter so in case of the wheel slip the result will be falsified.
 \
 In the first step, it is obligatory to install repository from MAB Robotics which in neccessary to communicate with motors. Even if you've done it already, please, read this section.
 1. Create workspace folder.
