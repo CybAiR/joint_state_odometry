@@ -4,7 +4,7 @@ In the first step, it is obligatory to install repository from MAB Robotics whic
 1. Create workspace folder.
 2. In workspace folder create "src" folder.
 3. From the terminal side, go to the "src" folder and use command "git clone https://github.com/mabrobotics/candle_ros2.git".
-4. Use command "git checkout 957fb87663ba940043fe939d8c2fab79d09c000f" - this repo only works with older version.
+4. Go to "candle_ros2" folder and use command "git checkout 957fb87663ba940043fe939d8c2fab79d09c000f" - this repo only works with older version.
 
 
 If you want to control your robot from the computer level, you have to install "teleop_twist_keyboard" package by using "sudo apt-get install ros-noetic-teleop-twist-keyboard" command.
