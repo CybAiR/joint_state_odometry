@@ -1,5 +1,8 @@
 #include "rclcpp/rclcpp.hpp"
 #include "nav_msgs/msg/odometry.hpp"
+#include "tf2/LinearMath/Quaternion.h"
+#include "tf2/LinearMath/Matrix3x3.h"
+#include <cmath>
 
 class OdomPrinter : public rclcpp::Node
 {
@@ -21,15 +24,23 @@ private:
     const auto &pos = msg->pose.pose.position;
     const auto &ori = msg->pose.pose.orientation;
 
+    // 1. Inicjalizacja kwaternionu tf2 na podstawie danych z wiadomości
+    tf2::Quaternion q(ori.x, ori.y, ori.z, ori.w);
+    
+    // 2. Konwersja do macierzy i wyciągnięcie kątów Eulera
+    tf2::Matrix3x3 m(q);
+    double roll, pitch, yaw;
+    m.getRPY(roll, pitch, yaw);
+
+    // 3. Konwersja radianów na stopnie
+    double yaw_deg = yaw * 180.0 / M_PI;
+
     std::cout << std::fixed;
     std::cout.precision(4);
     std::cout << "x: " << pos.x
               << ", y: " << pos.y
               << ", z: " << pos.z
-              << " | qx: " << ori.x
-              << ", qy: " << ori.y
-              << ", qz: " << ori.z
-              << ", qw: " << ori.w
+              << " | Yaw: " << yaw_deg << "°"
               << std::endl;
   }
 
@@ -44,4 +55,3 @@ int main(int argc, char **argv)
   rclcpp::shutdown();
   return 0;
 }
-
