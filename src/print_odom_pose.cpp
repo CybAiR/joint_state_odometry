@@ -39,7 +39,7 @@ private:
     std::cout.precision(4);
     std::cout << "x: " << pos.x
               << ", y: " << pos.y
-              << ", z: " << pos.z
+//              << ", z: " << pos.z
               << " | Yaw: " << yaw_deg << "°"
               << std::endl;
   }
