@@ -15,10 +15,16 @@ ament_target_dependencies(joint_state_odometry_node
   nav_msgs
   geometry_msgs
   tf2_ros
+  tf2
 )
 
 add_executable(print_odom_pose src/print_odom_pose.cpp)
-ament_target_dependencies(print_odom_pose rclcpp nav_msgs)
+ament_target_dependencies(print_odom_pose
+  rclcpp
+  nav_msgs
+  tf2_ros
+  tf2
+)
 
 install(TARGETS
   joint_state_odometry_node
@@ -29,4 +35,3 @@ install(TARGETS
 install(DIRECTORY launch config DESTINATION share/${PROJECT_NAME}/)
 
 ament_package()
-
