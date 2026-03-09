@@ -7,7 +7,8 @@ In the first step, it is obligatory to install repository from MAB Robotics whic
 4. Go to "candle_ros2" folder and use command "git checkout 957fb87663ba940043fe939d8c2fab79d09c000f" - this repo only works with older version.
 5. Stay in this folder and use command "git clone https://github.com/mabrobotics/candle.git".
 
-
+Also, it is important to have some repo which configures all the motors. I use private repo "cmd_vel_to_motors".
+\
 If you want to control your robot from the computer level, you have to install "teleop_twist_keyboard" package by using "sudo apt install ros-humble-teleop-twist-keyboard" command.
 \
 Next, we can go to loading this repo to workspace. If you are in the "src" folder, type this command: "git clone https://github.com/LukaszMajchrzak3/joint_state_odometry.git".
